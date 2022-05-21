@@ -27,4 +27,4 @@ repo_networkmanager_dmenu: "https://raw.githubusercontent.com/firecat53/networkm
 #Brave browser
 
 repo_brave: "https://brave-browser-rpm-release.s3.brave.com/x86_64/"
-ket_brave: "https://brave-browser-rpm-release.s3.brave.com/brave-core.asc"
+key_brave: "https://brave-browser-rpm-release.s3.brave.com/brave-core.asc"
