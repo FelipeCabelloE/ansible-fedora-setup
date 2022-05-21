@@ -14,7 +14,7 @@ Installs and configures most of the software I use on Fedora Workstation followi
         source ansible-env/bin/activate
         pip install ansible selinux
         ```
-3. Clone this repository: `git clone https://github.com/jorgeluiscarrillo/ansible-fedora-setup`
+3. Clone this repository: `git clone https://github.com/FelipeCabelloE/ansible-fedora-setup`
 
 ### Running the Playbook
 Change into the playbook directory and run `ansible-playbook`:
