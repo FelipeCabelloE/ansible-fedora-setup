@@ -9,11 +9,13 @@
     - vars/repos.yml
 
   tasks:
+    - include_tasks: tasks/config.yml
+      tags: config
+
     - include_tasks: tasks/packages.yml
       tags: packages
 
-    - include_tasks: tasks/config.yml
-      tags: config
+
 
 - name: User configuration
   hosts: localhost
