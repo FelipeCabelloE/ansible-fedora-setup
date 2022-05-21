@@ -1,7 +1,5 @@
 ---
 packages:
-  - @Multimedia
-  - @virtualization
   - git
   - htop
   - code
@@ -12,6 +10,7 @@ packages:
   - qgis
   - python3-qgis
   - qgis-grass
+  - vlc
 
 flatpaks:
   - com.discordapp.Discord

@@ -50,7 +50,7 @@
   tags: packages
 
 
-- name: Add/Enable better_fonts Copr
+- name: Add/Enable qgis Copr
   command: "dnf copr enable -y {{ copr_qgis }}"
   args:
     creates: "/etc/yum.repos.d/{{ repo_qgis }}"
@@ -71,11 +71,21 @@
 #     warn: no
 #   tags: packages
 
-# - name: Install packages
-#   dnf:
-#     name: "{{ packages }}"
-#     state: present
-#   tags: packages
+- name: Install packages
+  dnf:
+    name: "{{ packages }}"
+    state: present
+  tags: packages
+
+- name: Install multimedia codecs
+  dnf:
+    name: '@Multimedia'
+    state: present
+
+- name: Install virtualization
+  dnf:
+    name: '@Virtualization'
+    state: present
 
 - name: Enable Flathub repository
   flatpak_remote:
