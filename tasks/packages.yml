@@ -1,11 +1,11 @@
 ---
-- name: Disable Fedora Modular repos
-  lineinfile:
-    path: "/etc/yum.repos.d/{{ item }}"
-    regexp: '^enabled=1'
-    line: enabled=0
-  with_items: "{{ repo_modular }}"
-  tags: packages
+# - name: Disable Fedora Modular repos
+#   lineinfile:
+#     path: "/etc/yum.repos.d/{{ item }}"
+#     regexp: '^enabled=1'
+#     line: enabled=0
+#   with_items: "{{ repo_modular }}"
+#   tags: packages
 
 - name: Add/Enable RPM Fusion Free repository
   dnf:
@@ -13,6 +13,7 @@
     state: present
     disable_gpg_check: yes
   tags: packages
+
 
 - name: Add Microsoft GPG key
   rpm_key:
@@ -31,25 +32,50 @@
     gpgkey: "{{ rpm_key_microsoft }}"
   tags: packages
 
-- name: Add/Enable better_fonts Copr
-  command: "dnf copr enable -y {{ copr_better_fonts }}"
-  args:
-    creates: "/etc/yum.repos.d/{{ repo_better_fonts }}"
-    warn: no
-  tags: packages
-
-- name: Add/Enable Iosevka Copr
-  command: "dnf copr enable -y {{ copr_iosevka }}"
-  args:
-    creates: "/etc/yum.repos.d/{{ repo_iosevka }}"
-    warn: no
-  tags: packages
-
-- name: Install packages
-  dnf:
-    name: "{{ packages }}"
+- name: Add brave GPG key
+  rpm_key:
     state: present
+    key: "{{ key_brave }}"
   tags: packages
+
+- name: Add/Enable brave YUM repository
+  yum_repository:
+    file: brave
+    name: brave-browser
+    description: Brave browser
+    baseurl: "{{ repo_brave }}"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: "{{ key_brave }}"
+  tags: packages
+
+
+- name: Add/Enable better_fonts Copr
+  command: "dnf copr enable -y {{ copr_qgis }}"
+  args:
+    creates: "/etc/yum.repos.d/{{ repo_qgis }}"
+    warn: no
+  tags: packages
+
+# - name: Add/Enable better_fonts Copr
+#   command: "dnf copr enable -y {{ copr_better_fonts }}"
+#   args:
+#     creates: "/etc/yum.repos.d/{{ repo_better_fonts }}"
+#     warn: no
+#   tags: packages
+
+# - name: Add/Enable Iosevka Copr
+#   command: "dnf copr enable -y {{ copr_iosevka }}"
+#   args:
+#     creates: "/etc/yum.repos.d/{{ repo_iosevka }}"
+#     warn: no
+#   tags: packages
+
+# - name: Install packages
+#   dnf:
+#     name: "{{ packages }}"
+#     state: present
+#   tags: packages
 
 - name: Enable Flathub repository
   flatpak_remote:
@@ -70,8 +96,8 @@
     - packages
     - flatpak
 
-- name: Autoremove unrequired packages installed as dependencies
-  dnf:
-    autoremove: true
-    state: absent
-  tags: packages
+# - name: Autoremove unrequired packages installed as dependencies
+#   dnf:
+#     autoremove: true
+#     state: absent
+#   tags: packages

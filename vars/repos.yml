@@ -15,7 +15,16 @@ repo_better_fonts: "_copr:copr.fedorainfracloud.org:dawid:better_fonts.repo"
 
 copr_iosevka: "peterwu/iosevka"
 repo_iosevka: "_copr:copr.fedorainfracloud.org:peterwu:iosevka.repo"
+#qgis
+copr_qgis: "dani/qgis"
+repo_qgis: "_copr:copr.fedorainfracloud.org:dani:qgis.repo"
+
 
 repo_dotfiles: "https://github.com/jorgeluiscarrillo/dotfiles"
 repo_fontawesome: "https://api.github.com/repos/FortAwesome/Font-Awesome/releases/latest"
 repo_networkmanager_dmenu: "https://raw.githubusercontent.com/firecat53/networkmanager-dmenu/main/networkmanager_dmenu"
+
+#Brave browser
+
+repo_brave: "https://brave-browser-rpm-release.s3.brave.com/x86_64/"
+ket_brave: "https://brave-browser-rpm-release.s3.brave.com/brave-core.asc"
