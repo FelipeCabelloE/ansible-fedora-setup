@@ -86,15 +86,32 @@
   dnf:
     name: '@Virtualization'
     state: present
+############################ standar flathub way doenst work
+# - name: Enable Flathub repository
+#   flatpak_remote:
+#     name: flathub
+#     flatpakrepo_url: "{{ repo_flathub }}"
+#     state: present
+#     method: system
+#   tags: 
+#     - packages
+#     - flatpak
 
-- name: Enable Flathub repository
-  flatpak_remote:
-    name: flathub
-    state: present
-    flatpakrepo_url: "{{ repo_flathub }}"
-  tags: 
-    - packages
-    - flatpak
+
+# - name: Add the flathub flatpak repository remote to the user installation
+#   community.general.flatpak_remote:
+#     name: flathub
+#     state: present
+#     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+#     method: user
+############################
+
+
+- name: Enable flathub repository
+  command: "flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
+  args:
+    warn: no
+  tags: packages
 
 # TODO: Use list of names https://github.com/ansible-collections/community.general/pull/267
 - name: Install flatpaks

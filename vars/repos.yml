@@ -5,7 +5,7 @@ repo_modular:
 
 repo_rpmfusion: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
-repo_flathub: "https://dl.flathub.org/repo/flathub.flatpakrepo"
+repo_flathub: "https://flathub.org/repo/flathub.flatpakrepo"
 
 repo_vscode: "https://packages.microsoft.com/yumrepos/vscode"
 rpm_key_microsoft: "https://packages.microsoft.com/keys/microsoft.asc"

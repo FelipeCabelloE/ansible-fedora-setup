@@ -11,6 +11,10 @@ packages:
   - python3-qgis
   - qgis-grass
   - vlc
+  - flatpak
+  - xdg-utils
+  - xdg-desktop-portal
+  - xdg-desktop-portal-gtk
 
 flatpaks:
   - com.discordapp.Discord
