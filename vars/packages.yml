@@ -4,7 +4,7 @@ packages:
   - htop
   - code
   - bash-completion
-  - dnf-plugin-core
+  - dnf-plugins-core
   - brave-browser
   - gnome-tweaks
   - qgis
