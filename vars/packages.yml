@@ -15,6 +15,7 @@ packages:
   - xdg-utils
   - xdg-desktop-portal
   - xdg-desktop-portal-gtk
+  - google-noto-sans*
 
 flatpaks:
   - com.discordapp.Discord
