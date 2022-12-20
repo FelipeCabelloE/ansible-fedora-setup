@@ -16,6 +16,7 @@ packages:
   - xdg-desktop-portal
   - xdg-desktop-portal-gtk
   - google-noto-sans*
+  - starship
 
 flatpaks:
   - com.discordapp.Discord

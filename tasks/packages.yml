@@ -57,6 +57,14 @@
     warn: no
   tags: packages
 
+- name: Add/Enable starship Copr
+  command: "dnf copr enable -y {{ copr_starship }}"
+  args:
+    creates: "/etc/yum.repos.d/{{ repo_starship }}"
+    warn: no
+  tags: packages
+
+
 # - name: Add/Enable better_fonts Copr
 #   command: "dnf copr enable -y {{ copr_better_fonts }}"
 #   args:

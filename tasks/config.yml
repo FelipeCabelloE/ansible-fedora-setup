@@ -26,3 +26,10 @@
       fastestmirror=1
       max_parallel_downloads=20
       deltarpm=true
+
+- name: Insert/Update DNF configuration block in /etc/dnf/dnf.conf
+  blockinfile:
+    path: "{{ home_dir }}/.bashrc"
+    block: |
+      eval "$(starship init bash)"
+

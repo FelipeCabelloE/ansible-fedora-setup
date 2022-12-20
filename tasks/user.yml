@@ -60,3 +60,11 @@
 #     repo: "{{ repo_dotfiles }}"
 #     dest: "{{ home_dir }}/dotfiles"
 #   tags: user
+
+
+##TODO add the starship config file to home_dir/.config/
+# - name: Pull dotfiles from Starship 
+#   git:
+#     repo: "{{ repo_dotfiles }}"
+#     dest: "{{ home_dir }}/dotfiles"
+#   tags: user

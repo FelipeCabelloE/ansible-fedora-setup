@@ -28,3 +28,7 @@ repo_networkmanager_dmenu: "https://raw.githubusercontent.com/firecat53/networkm
 
 repo_brave: "https://brave-browser-rpm-release.s3.brave.com/x86_64/"
 key_brave: "https://brave-browser-rpm-release.s3.brave.com/brave-core.asc"
+
+## Copr starship
+copr_starship: "atim/starship"
+repo_starship: "_copr:copr.fedorainfracloud.org:atim:starship.repo"
