@@ -22,3 +22,13 @@ Change into the playbook directory and run `ansible-playbook`:
 cd ansible-fedora-setup/
 ansible-playbook -K playbook.yml
 ```
+
+
+##TODO
+I have to update to my actual setup in preparation for fedora 38
+
+Some of the changes that i have to take in consideration is the usage of pycharm, speedup of firefox using env variable, and the integration of starship with (maybe?) fish
+
+see installation isntructions for more ideas on necesary changes.
+
+Maybe I could setup juppyter 
