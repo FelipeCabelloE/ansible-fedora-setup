@@ -23,7 +23,7 @@
   blockinfile:
     path: /etc/dnf/dnf.conf
     block: |
-      fastestmirror=1
+      fastestmirror=0
       max_parallel_downloads=20
       deltarpm=true
       installonly_limit=3

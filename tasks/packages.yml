@@ -22,16 +22,12 @@
     disable_gpg_check: yes
   tags: packages
 
+- name: vivaldi Repo
+  get_url:
+    url: https://repo.vivaldi.com/archive/vivaldi-fedora.repo
+    dest: /etc/yum.repos.d/vivaldi.repo
 
-- name: Add/Enable vivaldi-stable YUM repository
-  yum_repository:
-    file: vivaldi
-    name: vivaldi-stable
-    description: vivaldi browser
-    baseurl: "{{ repo_vivaldi }}"
-    enabled: yes
-    gpgcheck: no
-  tags: packages
+
 
 - name: Add Microsoft GPG key
   rpm_key:
@@ -72,6 +68,7 @@
 #     gpgcheck: yes
 #     gpgkey: "{{ key_brave }}"
 #   tags: packages
+
 
 
 - name: Add/Enable qgis Copr
