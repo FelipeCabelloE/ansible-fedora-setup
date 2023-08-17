@@ -29,7 +29,7 @@
       installonly_limit=3
       clean_requirements_on_remove=True
 
-- name: Insert/Update DNF configuration block in /etc/dnf/dnf.conf
+- name: Insert/Update bash config
   blockinfile:
     path: "{{ home_dir }}/.bashrc"
     block: |
