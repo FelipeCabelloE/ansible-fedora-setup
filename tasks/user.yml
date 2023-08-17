@@ -34,26 +34,26 @@
 #     mode: '0775'
 #   tags: user
 
-# - name: Create fonts directory
-#   file:
-#     path: "{{ data_dir }}/fonts"
-#     state: directory
-#     mode: '0755'
-#   tags: user
+- name: Create fonts directory
+  file:
+    path: "{{ data_dir }}/fonts"
+    state: directory
+    mode: '0755'
+  tags: user
 
-# - name: Fetch latest release of Font Awesome fonts from GitHub
-#   uri:
-#     url: "{{ repo_fontawesome }}"
-#     return_content: true
-#   register: json_response
-#   tags: user
+- name: Fetch latest release of Font Awesome fonts from GitHub
+  uri:
+    url: "{{ repo_fontawesome }}"
+    return_content: true
+  register: json_response
+  tags: user
 
-# - name: Download and extract Font Awesome desktop fonts
-#   unarchive:
-#     src: "{{ json_response.json.assets[0].browser_download_url }}"
-#     dest: "{{ data_dir }}/fonts"
-#     remote_src: yes
-#   tags: user
+- name: Download and extract Font Awesome desktop fonts
+  unarchive:
+    src: "{{ json_response.json.assets[0].browser_download_url }}"
+    dest: "{{ data_dir }}/fonts"
+    remote_src: yes
+  tags: user
 
 # - name: Pull dotfiles from GitHub
 #   git:
