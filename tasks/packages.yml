@@ -151,8 +151,6 @@
 
 - name: Enable flathub repository
   command: "flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo"
-  args:
-    warn: no
   tags: packages
 
 # TODO: Use list of names https://github.com/ansible-collections/community.general/pull/267
