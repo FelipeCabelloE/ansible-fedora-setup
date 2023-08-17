@@ -23,13 +23,15 @@
   tags: packages
 
 
-- name: Add/Enable vivaldi-stable repository
-  dnf:
-    name: "{{ repo_vivaldi }}"
-    state: present
-    disable_gpg_check: yes
+- name: Add/Enable vivaldi-stable YUM repository
+  yum_repository:
+    file: vivaldi-stable
+    name: vivaldi
+    description: vivaldi browser
+    baseurl: "{{ repo_vivaldi }}"
+    enabled: yes
+    gpgcheck: no
   tags: packages
-
 
 - name: Add Microsoft GPG key
   rpm_key:
