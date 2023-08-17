@@ -26,6 +26,8 @@
       fastestmirror=1
       max_parallel_downloads=20
       deltarpm=true
+      installonly_limit=3
+      clean_requirements_on_remove=True
 
 - name: Insert/Update DNF configuration block in /etc/dnf/dnf.conf
   blockinfile:

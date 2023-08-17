@@ -15,6 +15,14 @@
   tags: packages
 
 
+- name: Add/Enable RPM Fusion Non-Free repository
+  dnf:
+    name: "{{ repo_rpmfusion_nonfree }}"
+    state: present
+    disable_gpg_check: yes
+  tags: packages
+
+
 - name: Add Microsoft GPG key
   rpm_key:
     state: present
@@ -32,22 +40,22 @@
     gpgkey: "{{ rpm_key_microsoft }}"
   tags: packages
 
-- name: Add brave GPG key
-  rpm_key:
-    state: present
-    key: "{{ key_brave }}"
-  tags: packages
+# - name: Add brave GPG key
+#   rpm_key:
+#     state: present
+#     key: "{{ key_brave }}"
+#   tags: packages
 
-- name: Add/Enable brave YUM repository
-  yum_repository:
-    file: brave
-    name: brave-browser
-    description: Brave browser
-    baseurl: "{{ repo_brave }}"
-    enabled: yes
-    gpgcheck: yes
-    gpgkey: "{{ key_brave }}"
-  tags: packages
+# - name: Add/Enable brave YUM repository
+#   yum_repository:
+#     file: brave
+#     name: brave-browser
+#     description: Brave browser
+#     baseurl: "{{ repo_brave }}"
+#     enabled: yes
+#     gpgcheck: yes
+#     gpgkey: "{{ key_brave }}"
+#   tags: packages
 
 
 - name: Add/Enable qgis Copr
@@ -84,6 +92,9 @@
     name: "{{ packages }}"
     state: present
   tags: packages
+
+
+
 
 - name: Install multimedia codecs
   dnf:

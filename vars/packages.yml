@@ -17,11 +17,20 @@ packages:
   - xdg-desktop-portal-gtk
   - google-noto-sans*
   - starship
+  - tlp
+  - tlp-rdw
+  - powertop
+  - ffmpeg
+  - ffmpeg-libs
+  - libva
+  - libva-utils
+  - intel-media-driver
+  - grub-customizer
 
 flatpaks:
   - com.discordapp.Discord
   - com.bitwarden.desktop
   - com.spotify.Client
-  - com.logseq.Logseq
+  - md.obsidian.Obsidian
   - org.zotero.Zotero
   - com.calibre_ebook.calibre
