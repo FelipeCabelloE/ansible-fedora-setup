@@ -5,7 +5,6 @@ packages:
   - code
   - bash-completion
   - dnf-plugins-core
-  - brave-browser
   - gnome-tweaks
   - qgis
   - python3-qgis
