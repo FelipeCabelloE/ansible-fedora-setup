@@ -23,6 +23,14 @@
   tags: packages
 
 
+- name: Add/Enable vivaldi-stable repository
+  dnf:
+    name: "{{ repo_vivaldi }}"
+    state: present
+    disable_gpg_check: yes
+  tags: packages
+
+
 - name: Add Microsoft GPG key
   rpm_key:
     state: present
@@ -39,6 +47,12 @@
     gpgcheck: yes
     gpgkey: "{{ rpm_key_microsoft }}"
   tags: packages
+
+
+
+
+
+
 
 # - name: Add brave GPG key
 #   rpm_key:
@@ -62,14 +76,12 @@
   command: "dnf copr enable -y {{ copr_qgis }}"
   args:
     creates: "/etc/yum.repos.d/{{ repo_qgis }}"
-    warn: no
   tags: packages
 
 - name: Add/Enable starship Copr
   command: "dnf copr enable -y {{ copr_starship }}"
   args:
     creates: "/etc/yum.repos.d/{{ repo_starship }}"
-    warn: no
   tags: packages
 
 

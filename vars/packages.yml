@@ -26,6 +26,7 @@ packages:
   - libva-utils
   - intel-media-driver
   - grub-customizer
+  - vivaldi-stable
 
 flatpaks:
   - com.discordapp.Discord
